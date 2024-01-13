@@ -2,7 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Characters/Character")]
-public class Character : ScriptableObject
+public class CharacterOld : ScriptableObject
 {
     [SerializeField] private int id = -1;
     [SerializeField] private string displayName = "New Display Name";

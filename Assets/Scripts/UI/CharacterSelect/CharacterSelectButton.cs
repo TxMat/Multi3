@@ -9,19 +9,19 @@ public class CharacterSelectButton : MonoBehaviour
 
     private CharacterSelectDisplay characterSelect;
 
-    public Character Character { get; private set; }
+    public CharacterOld CharacterOld { get; private set; }
     public bool IsDisabled { get; private set; }
 
-    public void SetCharacter(CharacterSelectDisplay characterSelect, Character character)
+    public void SetCharacter(CharacterSelectDisplay characterSelect, CharacterOld characterOld)
     {
         this.characterSelect = characterSelect;
         
-        Character = character;
+        CharacterOld = characterOld;
     }
 
     public void SelectCharacter()
     {
-        characterSelect.Select(Character);
+        characterSelect.Select(CharacterOld);
     }
 
     public void SetDisabled()

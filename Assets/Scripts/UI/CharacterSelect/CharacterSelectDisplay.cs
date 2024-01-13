@@ -30,7 +30,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
     {
         if (IsClient)
         {
-            Character[] allCharacters = characterDatabase.GetAllCharacters();
+            CharacterOld[] allCharacters = characterDatabase.GetAllCharacters();
 
             foreach (var character in allCharacters)
             {
@@ -89,7 +89,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
         }
     }
 
-    public void Select(Character character)
+    public void Select(CharacterOld characterOld)
     {
         for (int i = 0; i < players.Count; i++)
         {
@@ -97,12 +97,12 @@ public class CharacterSelectDisplay : NetworkBehaviour
 
             if (players[i].IsLockedIn) { return; }
 
-            if (players[i].CharacterId == character.Id) { return; }
+            if (players[i].CharacterId == characterOld.Id) { return; }
 
-            if (IsCharacterTaken(character.Id, false)) { return; }
+            if (IsCharacterTaken(characterOld.Id, false)) { return; }
         }
 
-        characterNameText.text = character.DisplayName;
+        characterNameText.text = characterOld.DisplayName;
 
         characterInfoPanel.SetActive(true);
 
@@ -111,9 +111,9 @@ public class CharacterSelectDisplay : NetworkBehaviour
             Destroy(introInstance);
         }
 
-        introInstance = Instantiate(character.IntroPrefab, introSpawnPoint);
+        introInstance = Instantiate(characterOld.IntroPrefab, introSpawnPoint);
 
-        SelectServerRpc(character.Id);
+        SelectServerRpc(characterOld.Id);
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -189,7 +189,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
         {
             if (button.IsDisabled) { continue; }
 
-            if (IsCharacterTaken(button.Character.Id, true))
+            if (IsCharacterTaken(button.CharacterOld.Id, true))
             {
                 button.SetDisabled();
             }

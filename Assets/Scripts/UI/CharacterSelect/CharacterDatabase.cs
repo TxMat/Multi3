@@ -4,11 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character Database", menuName = "Characters/Database")]
 public class CharacterDatabase : ScriptableObject
 {
-    [SerializeField] private Character[] characters = new Character[0];
+    [SerializeField] private CharacterOld[] characters = new CharacterOld[0];
 
-    public Character[] GetAllCharacters() => characters;
+    public CharacterOld[] GetAllCharacters() => characters;
 
-    public Character GetCharacterById(int id)
+    public CharacterOld GetCharacterById(int id)
     {
         foreach(var character in characters)
         {
