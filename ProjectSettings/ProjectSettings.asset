@@ -554,6 +554,7 @@ PlayerSettings:
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
   switchEnableFileSystemTrace: 0
+  switchUseGOLDLinker: 0
   switchLTOSetting: 0
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 
@@ -886,11 +887,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 928cdf82-f8db-4284-972c-882aac3824db
+  cloudProjectId: 4d073256-55dc-42cb-bb75-3e47f646d887
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CounterStrike GC (1)
-  organizationId: costodios
+  projectName: CounterStrike GC
+  organizationId: helpmeplz2244
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
